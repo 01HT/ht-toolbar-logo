@@ -1,0 +1,11 @@
+{
+  "name": "ht-toolbar-logo",
+  "flat": true,
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/maksimyurkov/ht-toolbar-logo",
+  "author": "maksimyurkov <yurkovm@mail.ru>",
+  "dependencies": {
+    "@polymer/polymer": "^3.0.0-pre.7"
+  }
+}
