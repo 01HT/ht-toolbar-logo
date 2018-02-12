@@ -26,7 +26,7 @@ class HTToolbarLogo extends Element {
 
         #main, #sub {
             letter-spacing: 2px;
-            font-weight: 500;
+            font-weight: 400;
         }
 
         [hidden] {
