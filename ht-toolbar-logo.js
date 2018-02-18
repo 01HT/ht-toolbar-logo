@@ -24,9 +24,21 @@ class HTToolbarLogo extends Element {
             margin-right: 8px;
         }
 
-        #main, #sub {
-            letter-spacing: 2px;
-            font-weight: 400;
+        #company, #app {
+          font-size: 22px;
+        }
+
+        #company {
+          font-weight: 500;
+        }
+
+        #app {
+          font-weight: 300;
+        }
+
+        #app {
+          color: var(--accent-color);
+          margin-left: 2px;
         }
 
         [hidden] {
@@ -35,8 +47,8 @@ class HTToolbarLogo extends Element {
       </style>
       <a href="[[href]]">
         <img src="[[imageSrc]]" style="width: [[imageWidth]]; height: [[imageHeight]];" hidden$="[[!showImage]]">
-        <div id="main">[[main]]</div>
-        <div id="sub">[[sub]]</div>
+        <div id="company">[[company]]</div>
+        <div id="app">[[app]]</div>
       </a>
 `;
   }
@@ -51,8 +63,8 @@ class HTToolbarLogo extends Element {
       imageWidth: { type: String, value: "" },
       imageHeight: { type: String, value: "" },
       showImage: { type: Boolean, value: true, reflectToAttribute: true },
-      main: { type: String, value: "" },
-      sub: { type: String, value: "" }
+      company: { type: String, value: "" },
+      app: { type: String, value: "" }
     };
   }
 }
