@@ -71,13 +71,13 @@ class HTToolbarLogo extends LitElement {
   
   constructor() {
     super();
-    this.href: ""
-    this.imageSrc: ""
-    this.imageWidth: ""
-    this.imageHeight: ""
-    this.showImage: ""
-    this.company: ""
-    this.app: ""
+    this.href = ""
+    this.imageSrc = ""
+    this.imageWidth = ""
+    this.imageHeight = ""
+    this.showImage = ""
+    this.company = ""
+    this.app = ""
   }
 }
 
