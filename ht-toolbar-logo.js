@@ -1,5 +1,5 @@
 "use strict";
-import { LitElement } from "@polymer/lit-element.js";
+import { LitElement } from "@polymer/lit-element";
 
 class HTToolbarLogo extends LitElement {
   render({href,imageSrc,imageWidth,imageHeight,showImage,company,app}) {
