@@ -1,10 +1,10 @@
 "use strict";
-import { Element } from "../@polymer/polymer/polymer-element.js";
+import { LitElement } from "@polymer/lit-element.js";
 
-class HTToolbarLogo extends Element {
-  static get template() {
-    return `
-      <style>
+class HTToolbarLogo extends LitElement {
+  render({href,imageSrc,imageWidth,imageHeight,showImage,company,app}) {
+    return html`
+        <style>
         :host {
             display: block;
             position: relative;
@@ -45,27 +45,39 @@ class HTToolbarLogo extends Element {
             display:none;
         }
       </style>
-      <a href="[[href]]">
-        <img src="[[imageSrc]]" style="width: [[imageWidth]]; height: [[imageHeight]];" hidden$="[[!showImage]]">
-        <div id="company">[[company]]</div>
-        <div id="app">[[app]]</div>
+      <a href="${href}">
+        <img src="${imageSrc}" style="width: ${imageWidth}; height: ${imageHeight};" hidden?="${!showImage}">
+        <div id="company">${company}</div>
+        <div id="app">${app}</div>
       </a>
 `;
   }
+
   static get is() {
     return "ht-toolbar-logo";
   }
 
   static get properties() {
     return {
-      href: { type: String, value: "" },
-      imageSrc: { type: String, value: "" },
-      imageWidth: { type: String, value: "" },
-      imageHeight: { type: String, value: "" },
-      showImage: { type: Boolean, value: true, reflectToAttribute: true },
-      company: { type: String, value: "" },
-      app: { type: String, value: "" }
+      href: String,
+      imageSrc: String,
+      imageWidth: String,
+      imageHeight: String,
+      showImage: Boolean,
+      company: String,
+      app: String
     };
+  }
+  
+  constructor() {
+    super();
+    this.href: ""
+    this.imageSrc: ""
+    this.imageWidth: ""
+    this.imageHeight: ""
+    this.showImage: ""
+    this.company: ""
+    this.app: ""
   }
 }
 
