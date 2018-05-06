@@ -2,7 +2,7 @@
 import { html, LitElement } from "@polymer/lit-element";
 
 class HTToolbarLogo extends LitElement {
-  render({href,imageSrc,imageWidth,imageHeight,showImage,company,app}) {
+  _render({href,imageSrc,imageWidth,imageHeight,showImage,company,app}) {
     return html`
         <style>
         :host {
