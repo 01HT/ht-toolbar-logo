@@ -5,6 +5,6 @@
   "repository": "https://github.com/maksimyurkov/ht-toolbar-logo",
   "author": "maksimyurkov <yurkovm@mail.ru>",
   "dependencies": {
-    "@polymer/lit-element": "@next"
+    "@polymer/lit-element": "^0.5.1"
   }
 }
