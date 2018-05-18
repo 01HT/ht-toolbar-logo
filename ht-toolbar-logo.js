@@ -2,7 +2,16 @@
 import { html, LitElement } from "@polymer/lit-element";
 
 class HTToolbarLogo extends LitElement {
-  _render({href,imageSrc,imageWidth,imageHeight,showImage,company,app}) {
+  _render({
+    href,
+    imageSrc,
+    imageWidth,
+    imageHeight,
+    showImage,
+    company,
+    app,
+    beta
+  }) {
     return html`
         <style>
         :host {
@@ -17,6 +26,7 @@ class HTToolbarLogo extends LitElement {
             color: inherit;
             display: flex;
             align-items: center;
+            position:relative;
         }
 
         img {
@@ -41,6 +51,17 @@ class HTToolbarLogo extends LitElement {
           margin-left: 2px;
         }
 
+        #beta {
+          background: var(--secondary-text-color);
+          color: #fff;
+          font-size: 10px;
+          border-radius: 4px;
+          position: absolute;
+          top: -6px;
+          right: -16px;
+          padding: 0 4px;
+        }
+
         [hidden] {
             display:none;
         }
@@ -49,6 +70,7 @@ class HTToolbarLogo extends LitElement {
         <img src="${imageSrc}" style="width: ${imageWidth}; height: ${imageHeight};" hidden?="${!showImage}">
         <div id="company">${company}</div>
         <div id="app">${app}</div>
+        <div id="beta" hidden?=${beta ? false : true}>beta</div>
       </a>
 `;
   }
@@ -65,19 +87,20 @@ class HTToolbarLogo extends LitElement {
       imageHeight: String,
       showImage: Boolean,
       company: String,
-      app: String
+      app: String,
+      beta: Boolean
     };
   }
-  
+
   constructor() {
     super();
-    this.href = ""
-    this.imageSrc = ""
-    this.imageWidth = ""
-    this.imageHeight = ""
-    this.showImage = ""
-    this.company = ""
-    this.app = ""
+    this.href = "";
+    this.imageSrc = "";
+    this.imageWidth = "";
+    this.imageHeight = "";
+    this.showImage = "";
+    this.company = "";
+    this.app = "";
   }
 }
 
