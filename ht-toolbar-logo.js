@@ -39,7 +39,7 @@ class HTToolbarLogo extends LitElement {
         }
 
         #company {
-          font-weight: 500;
+          //font-weight: 500;
         }
 
         #app {
