@@ -1,9 +1,10 @@
 {
-  "name": "ht-toolbar-logo",
+  "name": "@01ht/ht-toolbar-logo",
   "version": "1.0.0",
   "main": "ht-toolbar-logo.js",
-  "repository": "https://github.com/maksimyurkov/ht-toolbar-logo",
-  "author": "maksimyurkov <yurkovm@mail.ru>",
+  "repository": "01ht/ht-toolbar-logo",
+  "author": "01ht Ltd",
+  "license": "UNLICENSED",
   "dependencies": {
     "@polymer/lit-element": "^0.5.1"
   }
