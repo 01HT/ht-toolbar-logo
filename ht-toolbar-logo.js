@@ -2,16 +2,17 @@
 import { html, LitElement } from "@polymer/lit-element";
 
 class HTToolbarLogo extends LitElement {
-  _render({
-    href,
-    imageSrc,
-    imageWidth,
-    imageHeight,
-    showImage,
-    company,
-    app,
-    beta
-  }) {
+  render() {
+    const {
+      href,
+      imageSrc,
+      imageWidth,
+      imageHeight,
+      showImage,
+      app,
+      company,
+      beta
+    } = this;
     return html`
         <style>
         :host {
@@ -34,43 +35,50 @@ class HTToolbarLogo extends LitElement {
             margin-right: 8px;
         }
 
-        #company, #app {
-          font-size: 22px;
-        }
-
         #company {
-          //font-weight: 500;
+          font-size: 12px;
+          color: var(--secondary-text-color);
+          font-weight: 400;
         }
 
         #app {
+          font-size: 22px;
           font-weight: 300;
-        }
-
-        #app {
-          color: var(--accent-color);
-          margin-left: 2px;
+          letter-spacing: -0.6px;
+          //color: var(--accent-color);
+          color:#414549;
         }
 
         #beta {
           background: var(--secondary-text-color);
-          color: #fff;
-          font-size: 10px;
-          border-radius: 4px;
-          position: absolute;
-          top: -6px;
-          right: -16px;
-          padding: 0 4px;
+            color: #fff;
+            font-size: 10px;
+            border-radius: 4px;
+            position: absolute;
+            top: -4px;
+            line-height: 1;
+            right: -16px;
+            font-weight: 400;
+            padding: 2px 4px;
         }
 
         [hidden] {
             display:none;
         }
+
+        @media (max-width:400px) {
+          #company {
+            display:none;
+          }
+        }
       </style>
-      <a href="${href}">
-        <img src="${imageSrc}" style="width: ${imageWidth}; height: ${imageHeight};" hidden?="${!showImage}">
-        <div id="company">${company}</div>
-        <div id="app">${app}</div>
-        <div id="beta" hidden?=${beta ? false : true}>beta</div>
+      <a href=${href}>
+        <img src=${imageSrc} style="width: ${imageWidth}; height: ${imageHeight};" ?hidden=${!showImage}>
+        <div id="text-container">
+          <span id="app">${app}</span>
+          <span id="company">by ${company}</span>
+          <div id="beta" ?hidden=${beta != ""}>beta</div>
+        </div>
       </a>
 `;
   }
@@ -81,14 +89,14 @@ class HTToolbarLogo extends LitElement {
 
   static get properties() {
     return {
-      href: String,
-      imageSrc: String,
-      imageWidth: String,
-      imageHeight: String,
-      showImage: Boolean,
-      company: String,
-      app: String,
-      beta: Boolean
+      href: { type: String },
+      imageSrc: { type: String },
+      imageWidth: { type: String },
+      imageHeight: { type: String },
+      showImage: { type: Boolean },
+      company: { type: String },
+      app: { type: String },
+      beta: { type: Boolean }
     };
   }
 
@@ -98,7 +106,7 @@ class HTToolbarLogo extends LitElement {
     this.imageSrc = "";
     this.imageWidth = "";
     this.imageHeight = "";
-    this.showImage = "";
+    this.showImage = false;
     this.company = "";
     this.app = "";
   }
