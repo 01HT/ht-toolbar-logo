@@ -76,7 +76,9 @@ class HTToolbarLogo extends LitElement {
         <img src=${imageSrc} style="width: ${imageWidth}; height: ${imageHeight};" ?hidden=${!showImage}>
         <div id="text-container">
           <span id="app">${app}</span>
-          <span id="company">by ${company}</span>
+          <span id="company" ?hidden=${
+            company === "" ? true : false
+          }>by ${company}</span>
           <div id="beta" ?hidden=${beta != ""}>beta</div>
         </div>
       </a>
