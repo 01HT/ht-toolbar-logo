@@ -42,10 +42,9 @@ class HTToolbarLogo extends LitElement {
         }
 
         #app {
-          font-size: 22px;
-          font-weight: 300;
-          letter-spacing: -0.6px;
-          //color: var(--accent-color);
+          font-size: 16px;
+          font-weight: 400;
+          //letter-spacing: -0.6px;
           color:#414549;
         }
 
