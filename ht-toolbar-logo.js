@@ -78,7 +78,7 @@ class HTToolbarLogo extends LitElement {
           <span id="company" ?hidden=${
             company === "" ? true : false
           }>by ${company}</span>
-          <div id="beta" ?hidden=${beta != ""}>beta</div>
+          <div id="beta" ?hidden=${!beta}>beta</div>
         </div>
       </a>
 `;
