@@ -72,7 +72,7 @@ class HTToolbarLogo extends LitElement {
         }
       </style>
       <a href=${href}>
-        <img src=${imageSrc} style="width: ${imageWidth}; height: ${imageHeight};" ?hidden=${!showImage}>
+        <img src=${imageSrc} alt=${app} style="width: ${imageWidth}; height: ${imageHeight};" ?hidden=${!showImage}>
         <div id="text-container">
           <span id="app">${app}</span>
           <span id="company" ?hidden=${
