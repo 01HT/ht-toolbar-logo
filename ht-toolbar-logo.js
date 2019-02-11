@@ -1,64 +1,65 @@
 "use strict";
 import { LitElement, html, css } from "lit-element";
 
+import { stylesBasicWebcomponents } from "@01ht/ht-theme/styles";
+
 class HTToolbarLogo extends LitElement {
-  static styles = css`<style>
-    :host {
-        display: block;
-        position: relative;
-        box-sizing: border-box;
-    }
+  static get styles() {
+    return [
+      stylesBasicWebcomponents,
+      css`
+        a {
+          text-decoration: none;
+          font-size: inherit;
+          color: inherit;
+          display: flex;
+          align-items: center;
+          position: relative;
+        }
 
-    a {
-        text-decoration: none;
-        font-size: inherit;
-        color: inherit;
-        display: flex;
-        align-items: center;
-        position:relative;
-    }
+        img {
+          display: block;
+          margin-right: 8px;
+        }
 
-    img {
-        display: block;
-        margin-right: 8px;
-    }
+        #company {
+          font-size: 12px;
+          color: var(--secondary-text-color);
+          font-weight: 400;
+        }
 
-    #company {
-      font-size: 12px;
-      color: var(--secondary-text-color);
-      font-weight: 400;
-    }
+        #app {
+          font-size: 18px;
+          font-weight: 400;
+          //letter-spacing: -0.6px;
+          color: #414549;
+        }
 
-    #app {
-      font-size: 16px;
-      font-weight: 400;
-      //letter-spacing: -0.6px;
-      color:#414549;
-    }
+        #beta {
+          background: var(--secondary-text-color);
+          color: #fff;
+          font-size: 10px;
+          border-radius: 4px;
+          position: absolute;
+          top: -4px;
+          line-height: 1;
+          right: -16px;
+          font-weight: 400;
+          padding: 2px 4px;
+        }
 
-    #beta {
-      background: var(--secondary-text-color);
-        color: #fff;
-        font-size: 10px;
-        border-radius: 4px;
-        position: absolute;
-        top: -4px;
-        line-height: 1;
-        right: -16px;
-        font-weight: 400;
-        padding: 2px 4px;
-    }
+        [hidden] {
+          display: none;
+        }
 
-    [hidden] {
-        display:none;
-    }
-
-    @media (max-width:400px) {
-      #company {
-        display:none;
-      }
-    }
-  </style>`;
+        @media (max-width: 400px) {
+          #company {
+            display: none;
+          }
+        }
+      `
+    ];
+  }
 
   render() {
     const {
