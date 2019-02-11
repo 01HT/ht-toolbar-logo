@@ -15,6 +15,7 @@ class HTToolbarLogo extends LitElement {
           display: flex;
           align-items: center;
           position: relative;
+          outline: none;
         }
 
         img {
